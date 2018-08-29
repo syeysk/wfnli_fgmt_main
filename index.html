@@ -93,33 +93,6 @@
 
             <br>
             
-            <form id="form_rtc">
-            
-                <fieldset><legend>Настройки часов</legend>
-                
-                <input type="hidden" name="seconds" value="0">
-
-                <table>
-                    <tr>
-                        <td> Дата: </td><td> <input type="date" name="date"> </td> <!--<input type="text" name="year" size="4"> - <input type="text" name="month" size="2"> - <input type="text" name="day" size="2">-->
-                    </tr>
-                    <tr>
-                        <td> Время: </td><td> <input type="time" name="time"> </td> <!--<input type="text" name="h" size="2"> : <input type="text" name="m" size="2"> : <input type="text" name="s" size="2">-->
-                    </tr>
-                </table>
-
-                <br><br>
-                
-                <input type='button' value='Сохранить' onclick="sendform(this, 'settings_time', {data:{source:'hand'}})">
-                <!--<input type='button' value='Обновить время через Интернет' onclick="sendform(this, 'settings_time', {data:{source:'ntp'}})">-->
-                <input type='button' value='Взять время из браузера и сохранить' onclick="{let d = get_rtc_browser(); console.log(d); this.form.date.value=d.date; this.form.time.value=d.time.slice(0, -3); this.form.seconds.value=d.time.slice(-2)}; sendform(this, 'settings_time', {data:{source:'browser'}})">
-               
-                </fieldset>
-            
-            </form>
-            
-            <br>
-            
             <form id="form_other">
                 <fieldset><legend>Прочее</legend>
                 
