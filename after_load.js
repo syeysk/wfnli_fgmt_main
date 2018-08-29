@@ -1,4 +1,31 @@
-document.getElementById('managing_btn_turn').addEventListener('click', btn_click);
+document.getElementById('managing_btn_turn').addEventListener('click', function(e) {
+    var input = e.target;
+    sendform(input, 'turn', {data:{
+        turn:input.dataset.value=='0'?'1':'0',
+    },func_success: function(res, input) {
+        input.dataset.value=input.dataset.value=='0'?'1':'0';
+    }, arg_func_success:input});
+});
+
+document.getElementById('managing_btn_color').addEventListener('change', function(e) {
+    var input = e.target;
+    console.log(input.value);
+    sendform(input, 'set_color', {data:{
+        color:input.value,
+    },func_success: function(res, input) {
+        input.dataset.value = '#' + parseInt(res.data.color).toString(16);
+    }, arg_func_success:input});
+});
+
+document.getElementById('managing_btn_brightness').addEventListener('change', function(e) {
+    var input = e.target;
+    console.log(input.value);
+    sendform(input, 'set__brightness', {data:{
+        brightness:input.value,
+    },func_success: function(res, input) {
+        input.dataset.value = res.data.brightness;
+    }, arg_func_success:input});
+});
 
 var cs = new ContentShower({
     navpanel: document.querySelector('.navpanel'),
