@@ -1,4 +1,4 @@
-document.getElementById('btns').addEventListener('click', btn_click);
+document.getElementById('managing_btn_turn').addEventListener('click', btn_click);
 
 var cs = new ContentShower({
     navpanel: document.querySelector('.navpanel'),
