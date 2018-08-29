@@ -7,7 +7,7 @@ function update_data(data_type='all', build_btns=false, showing_message=true) {
         
         if (data_type === 'managing' || data_type === 'all') { // строим панель до обновления состояния кнопок
             
-            document.getElementById('managing_btn_color').value = '#' + parseInt(res.data.color).toString(16);
+            document.getElementById('managing_btn_color').value = '#' + parseInt(res.data.color).toString(16).padStart(6, '0');
             document.getElementById('managing_btn_brightness').value = res.data.brightness;
             document.getElementById('managing_btn_turn').dataset.value = res.data.turn;
             
@@ -24,8 +24,6 @@ function update_data(data_type='all', build_btns=false, showing_message=true) {
             document.getElementById('form_wifi_wifi').ssid.value = res.data.settings.ssid;
             document.getElementById('form_wifi_wifi').passwordAP.value = res.data.settings.passwordAP;
             document.getElementById('form_wifi_wifi').ssidAP.value = res.data.settings.ssidAP;
-            
-            document.getElementById('form_rtc').time.value = res.data.stat.rtc_h +":"+ res.data.stat.rtc_m;
             
             document.getElementById('form_other').update_time.value = res.data.settings.update_time;
         }

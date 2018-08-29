@@ -13,14 +13,14 @@ document.getElementById('managing_btn_color').addEventListener('change', functio
     sendform(input, 'set_color', {data:{
         color:input.value,
     },func_success: function(res, input) {
-        input.dataset.value = '#' + parseInt(res.data.color).toString(16);
+        input.dataset.value = '#' + parseInt(res.data.color).toString(16).padStart(6, '0');
     }, arg_func_success:input});
 });
 
 document.getElementById('managing_btn_brightness').addEventListener('change', function(e) {
     var input = e.target;
     console.log(input.value);
-    sendform(input, 'set__brightness', {data:{
+    sendform(input, 'set_brightness', {data:{
         brightness:input.value,
     },func_success: function(res, input) {
         input.dataset.value = res.data.brightness;
