@@ -13,6 +13,8 @@ function update_data(data_type='all', build_btns=false, showing_message=true) {
             
             document.getElementById('stat_vcc').textContent = res.data.stat.vcc;
             document.getElementById('stat_time').textContent = res.data.stat.time_h +":"+ res.data.stat.time_m +":"+ res.data.stat.time_s;
+            
+            cp.setHex(document.getElementById('managing_btn_color').value);
         }
         if (data_type === 'set' || data_type === 'all') {
             
@@ -38,4 +40,12 @@ function get_rtc_browser() {
         date: d.getFullYear().toString().padStart(4, '0')+'-'+(d.getMonth()+1).toString().padStart(2, '0')+'-'+d.getDate().toString().padStart(2, '0'),
         time: d.getHours().toString().padStart(2, '0')+':'+d.getMinutes().toString().padStart(2, '0') +':'+ d.getSeconds().toString().padStart(2, '0')
     };
+}
+
+function set_color(input) {
+    sendform(input, 'set_color', {data:{
+        color:input.value,
+    },func_success: function(res, input) {
+        input.dataset.value = '#' + parseInt(res.data.color).toString(16).padStart(6, '0');
+    }, arg_func_success:input});
 }

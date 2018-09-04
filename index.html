@@ -6,8 +6,8 @@
         <title>WI-FI-Ночник "Инфинити" v0.1</title>
         <script src="webif_libs/functions_embedded.js"> </script>
         <script src="functions_wfnli.js"> </script>
+        <script src="colorpicker.min.js"> </script>
         <link rel="stylesheet" type="text/css" href="index.css">
-
     </head>
     <body>
         
@@ -20,6 +20,9 @@
             <div>
                 <input type="button" value='вкл/выкл' data-value='0' class='turn_button' id="managing_btn_turn"><br>
                 Цвет: <input type="color" value='#ffffff'id="managing_btn_color"><br>
+                <div class="cp-default">
+                    <div id="picker"> </div><div id="slide"> </div>
+                </div><br>
                 Яркость: <input type="range" value="0" id="managing_btn_brightness" min="1" max="255" step="1"> <br>
             </div>
             <div style="text-align:left;">
@@ -113,8 +116,6 @@
         </div>-->
         
         <script src="after_load.js"> </script>
-        
-        
         
     </body>
 </html>

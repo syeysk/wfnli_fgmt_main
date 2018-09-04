@@ -1,3 +1,9 @@
+var cp = ColorPicker(
+    document.getElementById('slide'),
+    document.getElementById('picker'),
+                     function(hex, hsv, rgb) {var input = document.getElementById('managing_btn_color'); input.value = hex; set_color(input);}
+);
+
 document.getElementById('managing_btn_turn').addEventListener('click', function(e) {
     var input = e.target;
     sendform(input, 'turn', {data:{
@@ -9,12 +15,7 @@ document.getElementById('managing_btn_turn').addEventListener('click', function(
 
 document.getElementById('managing_btn_color').addEventListener('change', function(e) {
     var input = e.target;
-    console.log(input.value);
-    sendform(input, 'set_color', {data:{
-        color:input.value,
-    },func_success: function(res, input) {
-        input.dataset.value = '#' + parseInt(res.data.color).toString(16).padStart(6, '0');
-    }, arg_func_success:input});
+    set_color(input);
 });
 
 document.getElementById('managing_btn_brightness').addEventListener('change', function(e) {
