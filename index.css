@@ -36,8 +36,8 @@ legend {color:#9a6e01;}
 
 /* color picker */
 
-#picker {display: inline-block; cursor: crosshair; position: relative;}
-#slide {display: inline-block; cursor: crosshair; position: relative; width:25px; }
+#picker {display: inline-block; cursor: crosshair; position: relative; width: 85%; height: 100%;}
+#slide {display: inline-block; cursor: crosshair; position: relative; width:25px; height: 100%;}
 
 /* color picker (Common stuff) */
 
@@ -55,14 +55,15 @@ legend {color:#9a6e01;}
 /* color-picker */
 
 .cp-default {
+    height: 35vh;
+    min-height: 150px;
+    max-height: 350px;
 }
 .cp-default .picker {
-    width: 200px;
-    height: 200px;
+
 }
 .cp-default .slide {
-    width: 30px;
-    height: 200px;
+
 }
 .cp-default .slide-wrapper {
     margin-left: 10px;
