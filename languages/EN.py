@@ -26,5 +26,6 @@ context = {
     'set_other_reset_done': 'The settings has been reset. Please, reboot the device.', 
     'set_other_reboot_question': 'The device will reboot. Continue?', 
     'set_other_reboot_done': 'The device has been rebooted. Please, reload this page after several seconds.', 
+    'ms': 'ms', 
     '': '', 
 } 
