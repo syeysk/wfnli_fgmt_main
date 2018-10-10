@@ -22,9 +22,9 @@ context = {
     'set_other_update_time': 'Time period to update this page', 
     'set_other_reset': 'Reset the settings', 
     'set_other_reboot': 'Reboot', 
-    'set_other_reset_question': 'Настройки будут безвозвратно сброшены на заводские. Продолжить?', 
-    'set_other_reset_done': 'Настройки сброшены. Перезагрузите устройство.', 
-    'set_other_reboot_question': 'Устройство будет перезапущено. Продолжить?', 
-    'set_other_reboot_done': 'Устройство перезапущено. Через несколько секунд обновите данную страницу.', 
+    'set_other_reset_question': 'The settings will be reset irrevocably. Continue?', 
+    'set_other_reset_done': 'The settings has been reset. Please, reboot the device.', 
+    'set_other_reboot_question': 'The device will reboot. Continue?', 
+    'set_other_reboot_done': 'The device has been rebooted. Please, reload this page after several seconds.', 
     '': '', 
 } 
