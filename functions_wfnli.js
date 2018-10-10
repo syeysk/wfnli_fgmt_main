@@ -8,7 +8,7 @@ function update_data(data_type='all', build_btns=false, showing_message=true) {
         if (data_type === 'managing' || data_type === 'all') { // строим панель до обновления состояния кнопок
             
             document.getElementById('managing_btn_color').value = '#' + parseInt(res.data.color).toString(16).padStart(6, '0');
-            document.getElementById('managing_btn_brightness').value = res.data.brightness;
+            //document.getElementById('managing_btn_brightness').value = res.data.brightness;
             document.getElementById('managing_btn_turn').dataset.value = res.data.turn;
             
             document.getElementById('stat_vcc').textContent = res.data.stat.vcc;

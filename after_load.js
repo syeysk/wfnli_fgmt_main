@@ -18,7 +18,7 @@ document.getElementById('managing_btn_color').addEventListener('change', functio
     set_color(input);
 });
 
-document.getElementById('managing_btn_brightness').addEventListener('change', function(e) {
+/*document.getElementById('managing_btn_brightness').addEventListener('change', function(e) {
     var input = e.target;
     console.log(input.value);
     sendform(input, 'set_brightness', {data:{
@@ -26,7 +26,7 @@ document.getElementById('managing_btn_brightness').addEventListener('change', fu
     },func_success: function(res, input) {
         input.dataset.value = res.data.brightness;
     }, arg_func_success:input});
-});
+});*/
 
 var cs = new ContentShower({
     navpanel: document.querySelector('.navpanel'),
