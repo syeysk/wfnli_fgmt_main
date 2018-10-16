@@ -29,3 +29,6 @@ context = {
     'ms': 'ms', 
     '': '', 
 } 
+
+import os
+path = [os.path.dirname(os.path.dirname(__file__))+'/webif_libs/languages']
