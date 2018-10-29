@@ -13,6 +13,16 @@ document.getElementById('managing_btn_turn').addEventListener('click', function(
     }, arg_func_success:input});
 });
 
+document.getElementById('managing_btn_demo').addEventListener('click', function(e) {
+    var input = e.target;
+    sendform(input, 'demo', {data:{
+        turn:input.dataset.value=='0'?'1':'0',
+    },func_success: function(res, input) {
+        input.dataset.value=input.dataset.value=='0'?'1':'0';
+    }, arg_func_success:input});
+});
+
+
 document.getElementById('managing_btn_color').addEventListener('change', function(e) {
     var input = e.target;
     set_color(input);
