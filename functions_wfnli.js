@@ -7,15 +7,15 @@ function update_data(data_type='all', build_btns=false, showing_message=true) {
         
         if (data_type === 'managing' || data_type === 'all') { // строим панель до обновления состояния кнопок
             
-            document.getElementById('managing_btn_color').value = '#' + parseInt(res.data.color).toString(16).padStart(6, '0');
+            set_color_offline(res.data.color);
+            set_demo_speed_offline(res.data.demo_speed);
+
             //document.getElementById('managing_btn_brightness').value = res.data.brightness;
             document.getElementById('managing_btn_turn').dataset.value = res.data.turn;
             document.getElementById('managing_btn_demo').dataset.value = res.data.demo;
             
             document.getElementById('stat_vcc').textContent = res.data.stat.vcc;
             document.getElementById('stat_time').textContent = res.data.stat.time_h +":"+ res.data.stat.time_m +":"+ res.data.stat.time_s;
-            
-            cp.setHex(document.getElementById('managing_btn_color').value);
         }
         if (data_type === 'set' || data_type === 'all') {
             
@@ -43,10 +43,45 @@ function get_rtc_browser() {
     };
 }
 
-function set_color(input) {
-    sendform(input, 'set_color', {data:{
-        color:input.value,
+function set_color(color) {
+    sendform(null, 'set_color', {data:{
+        color:color,
+    },func_success: function(res, arg) {
+        set_color_offline(res.data.color);
+    }});
+}
+
+//function ev_set_color(e) {
+//    var input = e.target;
+//    set_color(input);
+//}
+
+function set_color_offline(color) {
+    color = '#' + parseInt(color).toString(16).padStart(6, '0');
+    //document.getElementById('managing_btn_color').removeEventListener('change', ev_set_color);
+    //document.getElementById('managing_btn_color').value = color;
+    cp.is_online=0;
+    cp.setHex(color);
+    cp.is_online=1;
+    //document.getElementById('managing_btn_color').addEventListener('change', ev_set_color);
+}
+
+
+function set_demo_speed(input) {
+    sendform(input, 'demo_speed', {data:{
+        speed:input.value,
     },func_success: function(res, input) {
-        input.dataset.value = '#' + parseInt(res.data.color).toString(16).padStart(6, '0');
+        set_demo_speed_offline(res.data.speed);
     }, arg_func_success:input});
+}
+
+function ev_set_demo_speed(e) {
+    var input = e.target;
+    set_demo_speed(input);
+}
+
+function set_demo_speed_offline(demo_speed) {
+    document.getElementById('managing_btn_demo_speed').removeEventListener('change', ev_set_demo_speed);
+    document.getElementById('managing_btn_demo_speed').value = demo_speed;
+    document.getElementById('managing_btn_demo_speed').addEventListener('change', ev_set_demo_speed);
 }
