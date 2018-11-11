@@ -14,7 +14,7 @@ function update_data(data_type='all', build_btns=false, showing_message=true) {
             document.getElementById('managing_btn_turn').dataset.value = res.data.turn;
             document.getElementById('managing_btn_demo').dataset.value = res.data.demo;
             
-            document.getElementById('stat_vcc').textContent = res.data.stat.vcc;
+            //document.getElementById('stat_vcc').textContent = res.data.stat.vcc;
             document.getElementById('stat_time').textContent = res.data.stat.time_h +":"+ res.data.stat.time_m +":"+ res.data.stat.time_s;
         }
         if (data_type === 'set' || data_type === 'all') {
